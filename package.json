@@ -6,10 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:scss": "stylelint --ignore-path .gitignore '**/*.scss'",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
     "clsx": "^2.1.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "next": "14.2.4",
     "next-auth": "^5.0.0-beta.3",
     "prettier": "^3.3.2",
@@ -23,6 +32,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
     "sass": "^1.77.6",
     "stylelint": "^16.6.1",
     "stylelint-config-prettier-scss": "^1.0.0",
@@ -30,5 +41,10 @@
     "stylelint-order": "^6.0.4",
     "stylelint-scss": "^6.3.1",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,css,scss,md,html}": [
+      "yarn format:fix"
+    ]
   }
 }
