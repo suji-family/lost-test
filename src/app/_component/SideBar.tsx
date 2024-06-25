@@ -8,7 +8,7 @@ import Link from 'next/link'
 export default function SideBar() {
   const categories = [
     { id: 'home', path: '', label: '홈' },
-    { id: 'news', path: 'news/notice', label: '공지사항' },
+    { id: 'notices', path: 'news/notice', label: '공지사항' },
     { id: 'events', path: 'news/event', label: '이벤트' },
   ]
 
