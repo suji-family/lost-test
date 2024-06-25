@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 
 import './reset.scss'
+import SideBar from './_component/SideBar'
 
 // 무료 폰트
 const Pretendard = localFont({
@@ -22,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={clsx([Pretendard.className])}>{children}</body>
+      <body className={clsx([Pretendard.className])}>
+        <SideBar />
+        <main>{children}</main>
+      </body>
     </html>
   )
 }
