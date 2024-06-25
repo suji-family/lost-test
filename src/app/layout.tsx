@@ -24,10 +24,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={clsx([Pretendard.className])}>
-        <div>
-          <SideBar />
-          <main>{children}</main>
-        </div>
+        <SideBar />
+        <main>{children}</main>
       </body>
     </html>
   )
