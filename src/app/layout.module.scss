@@ -1,0 +1,22 @@
+.mobile {
+  font-size: 13px;
+}
+
+.desktop {
+  font-size: 16px;
+}
+
+.body {
+  h1 {
+    @include mixins.title1;
+  }
+  h2 {
+    @include mixins.title2;
+  }
+  h3 {
+    @include mixins.headline;
+  }
+  h4 {
+    @include mixins.subHeadline;
+  }
+}
