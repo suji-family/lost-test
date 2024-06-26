@@ -1,0 +1,48 @@
+@mixin title1 {
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 160%;
+  letter-spacing: -0.011em;
+}
+
+@mixin title2 {
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 160%;
+  letter-spacing: -0.011em;
+}
+
+@mixin headline {
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 160%;
+  letter-spacing: -0.03rem;
+}
+
+@mixin subHeadline {
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 160%;
+  letter-spacing: -0.03rem;
+}
+
+@mixin body {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 160%;
+  letter-spacing: -0.03rem;
+}
+
+@mixin caption {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 160%;
+  letter-spacing: -0.03rem;
+}
+
+@mixin captionBold {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 160%;
+  letter-spacing: -0.03rem;
+}
