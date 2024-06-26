@@ -6,8 +6,18 @@ import Tab from './_component/Tab'
  * @description
  * 공지사항 테스트 페이지 (임시))
  */
-export default async function page() {
-  const noticeList: NoticeList = await getNoticeList()
+
+interface Props {
+  searchParams: {
+    type: string
+  }
+}
+
+export default async function page({ searchParams }: Props) {
+  const { type } = searchParams
+  console.log('type', type)
+
+  const noticeList: NoticeList = await getNoticeList(type)
 
   return (
     <section>

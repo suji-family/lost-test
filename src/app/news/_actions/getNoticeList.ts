@@ -1,9 +1,9 @@
 import getNoticeListServer from '@/data-access/news/getNoticeList'
 import { NoticeList } from '@/model/news/notices'
 
-export default async function getNoticeList(): Promise<NoticeList> {
+export default async function getNoticeList(type: string): Promise<NoticeList> {
   try {
-    const data = await getNoticeListServer()
+    const data = await getNoticeListServer(type)
 
     return data
   } catch (e) {
