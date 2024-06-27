@@ -1,0 +1,23 @@
+.tab {
+  display: flex;
+  margin-bottom: 20px;
+  height: 60px;
+  border-top: 3px solid color.$black;
+  border-bottom: 1px solid color.$grey-400;
+
+  a {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: color.$grey-200;
+    color: color.$grey-500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+      background-color: color.$white;
+      color: color.$black;
+    }
+  }
+}
