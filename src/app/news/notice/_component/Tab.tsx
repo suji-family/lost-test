@@ -3,7 +3,7 @@
 import Link from 'next/link'
 
 export default function Tab() {
-  const url = 'http://localhost:3000/news/notice?type='
+  const url = '/news/notice?type='
 
   return (
     <div>
