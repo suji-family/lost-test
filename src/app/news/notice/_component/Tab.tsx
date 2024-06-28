@@ -15,32 +15,30 @@ export default function Tab({ searchParams }: Props) {
   return (
     <div>
       <h2>공지사항</h2>
-      <div className={clsx([styles.tab])}>
+      <div className={styles.tab}>
         <Link
           href={{ pathname: `${url}`, query: { type: '공지' } }}
-          legacyBehavior
+          className={clsx(type === '공지' && styles.active)}
         >
-          <div className={clsx([type === '공지' && styles.active])}>공지</div>
+          공지
         </Link>
         <Link
           href={{ pathname: `${url}`, query: { type: '점검' } }}
-          legacyBehavior
+          className={clsx(type === '점검' && styles.active)}
         >
-          <div className={clsx([type === '점검' && styles.active])}>점검</div>
+          점검
         </Link>
         <Link
           href={{ pathname: `${url}`, query: { type: '상점' } }}
-          legacyBehavior
+          className={clsx(type === '상점' && styles.active)}
         >
-          <div className={clsx([type === '상점' && styles.active])}>상점</div>
+          상점
         </Link>
         <Link
           href={{ pathname: `${url}`, query: { type: '이벤트' } }}
-          legacyBehavior
+          className={clsx(type === '이벤트' && styles.active)}
         >
-          <div className={clsx([type === '이벤트' && styles.active])}>
-            이벤트
-          </div>
+          이벤트
         </Link>
       </div>
     </div>
