@@ -10,7 +10,7 @@ const nextConfig = {
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles/')],
-    prependData: `@use "@/styles/_color.module.scss" as color; @use "@/styles/_mixins.module.scss" as mixins;`,
+    prependData: `@use "@/styles/_color.module.scss" as color; @use "@/styles/_variables.module.scss" as variables; @use "@/styles/_mixins.module.scss" as mixins;`,
   },
   env: {
     VERSION: version,

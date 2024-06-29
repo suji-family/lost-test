@@ -19,4 +19,23 @@
   h4 {
     @include mixins.subHeadline;
   }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .contents {
+    max-width: variables.$contents-max-width;
+    margin-top: variables.$navigator-height;
+
+    width: 100%;
+  }
+
+  .sidebar {
+    //
+  }
+
+  .main {
+    //
+  }
 }

@@ -2,6 +2,7 @@ import getIsMobile from '@/lib/getIsMobile'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import Navigator from './_component/Navigator'
 import SideBar from './_component/SideBar'
 import UserDeviceCheckProvider from './_component/UserDeviceCheckProvider'
 import styles from './layout.module.scss'
@@ -34,8 +35,12 @@ export default function RootLayout({
         ])}
       >
         <UserDeviceCheckProvider isMobile={isMobile}>
-          <SideBar />
-          <main>{children}</main>
+          <Navigator />
+
+          <article className={styles.contents}>
+            <SideBar />
+            <main className={styles.main}>{children}</main>
+          </article>
         </UserDeviceCheckProvider>
       </body>
     </html>

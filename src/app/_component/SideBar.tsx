@@ -1,9 +1,9 @@
 /**
  * @description 페이지에서 공통으로 사용되는 사이드바 컴포넌트
  */
-'use client'
 
 import Link from 'next/link'
+import styles from './SideBar.module.scss'
 
 export default function SideBar() {
   const categories = [
@@ -13,7 +13,7 @@ export default function SideBar() {
   ]
 
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         {categories.map((category) => (
           <li key={category.id}>
