@@ -1,7 +1,25 @@
 .navigator {
-  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: variables.$navigator-height;
 
+  z-index: variables.$z-index-navigator;
   background-color: color.$black;
+}
+
+.navList {
+  max-width: variables.$contents-max-width;
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
 }

@@ -39,7 +39,7 @@ export default function RootLayout({
 
           <article className={styles.contents}>
             <SideBar />
-            <main className={styles.main}>{children}</main>
+            <main>{children}</main>
           </article>
         </UserDeviceCheckProvider>
       </body>

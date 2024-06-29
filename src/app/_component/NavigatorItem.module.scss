@@ -1,0 +1,7 @@
+.navItem {
+  @include mixins.headline;
+
+  display: flex;
+  color: color.$white;
+  padding: 16px;
+}
