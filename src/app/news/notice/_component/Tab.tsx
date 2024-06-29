@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import styles from './Tab.module.scss'
-import { log } from 'console'
 
 interface Props {
   type: string
