@@ -27,15 +27,9 @@
   .contents {
     max-width: variables.$contents-max-width;
     margin-top: variables.$navigator-height;
-
     width: 100%;
-  }
 
-  .sidebar {
-    //
-  }
-
-  .main {
-    //
+    display: grid;
+    grid-template-columns: 200px 1fr;
   }
 }
