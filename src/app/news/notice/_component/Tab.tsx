@@ -1,45 +1,35 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import styles from './Tab.module.scss'
+import { log } from 'console'
 
 interface Props {
-  searchParams: {
-    type: string
-  }
+  type: string
 }
 
-export default function Tab({ searchParams }: Props) {
-  const { type } = searchParams
+const tabs = [
+  { label: '공지', query: '공지' },
+  { label: '점검', query: '점검' },
+  { label: '상점', query: '상점' },
+  { label: '이벤트', query: '이벤트' },
+]
+
+export default function Tab({ type }: Props) {
   const url = '/news/notice'
+  const defaultType = type || '공지'
 
   return (
     <div>
       <h2>공지사항</h2>
       <div className={styles.tab}>
-        <Link
-          href={{ pathname: `${url}`, query: { type: '공지' } }}
-          className={clsx(type === '공지' && styles.active)}
-        >
-          공지
-        </Link>
-        <Link
-          href={{ pathname: `${url}`, query: { type: '점검' } }}
-          className={clsx(type === '점검' && styles.active)}
-        >
-          점검
-        </Link>
-        <Link
-          href={{ pathname: `${url}`, query: { type: '상점' } }}
-          className={clsx(type === '상점' && styles.active)}
-        >
-          상점
-        </Link>
-        <Link
-          href={{ pathname: `${url}`, query: { type: '이벤트' } }}
-          className={clsx(type === '이벤트' && styles.active)}
-        >
-          이벤트
-        </Link>
+        {tabs.map((tab) => (
+          <Link
+            href={{ pathname: `${url}`, query: { type: tab.query } }}
+            className={clsx(defaultType === tab.query && styles.active)}
+          >
+            {tab.label}
+          </Link>
+        ))}
       </div>
     </div>
   )

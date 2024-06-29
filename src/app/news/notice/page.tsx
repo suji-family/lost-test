@@ -24,7 +24,7 @@ export default async function page({ searchParams }: Props) {
 
   return (
     <section className={clsx([styles.page])}>
-      <Tab searchParams={{ type: type }} />
+      <Tab type={type} />
       {noticeList && noticeList.map((notice) => <div>{notice.Title}</div>)}
     </section>
   )
