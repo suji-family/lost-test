@@ -2,15 +2,10 @@
  * @description 페이지에서 공통으로 사용되는 사이드바 컴포넌트
  */
 
-import clsx from 'clsx'
 import Link from 'next/link'
 import styles from './SideBar.module.scss'
 
-interface Props {
-  className?: string
-}
-
-export default function SideBar({ className }: Props) {
+export default function SideBar() {
   const categories = [
     { id: 'home', path: '', label: '홈' },
     { id: 'notices', path: 'news/notice', label: '공지사항' },
@@ -18,7 +13,7 @@ export default function SideBar({ className }: Props) {
   ]
 
   return (
-    <nav className={clsx([styles.nav, className ?? null])}>
+    <nav className={styles.nav}>
       <ul>
         {categories.map((category) => (
           <li key={category.id}>

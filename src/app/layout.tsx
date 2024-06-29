@@ -35,10 +35,10 @@ export default function RootLayout({
         ])}
       >
         <UserDeviceCheckProvider isMobile={isMobile}>
-          <Navigator className={styles.navigator} />
+          <Navigator />
 
           <article className={styles.contents}>
-            <SideBar className={styles.sidebar} />
+            <SideBar />
             <main className={styles.main}>{children}</main>
           </article>
         </UserDeviceCheckProvider>
