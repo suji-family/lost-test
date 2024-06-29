@@ -1,22 +1,36 @@
-'use client'
-
 import Link from 'next/link'
+import clsx from 'clsx'
+import styles from './Tab.module.scss'
+import { log } from 'console'
 
-export default function Tab() {
-  const url = '/news/notice?type='
+interface Props {
+  type: string
+}
+
+const tabs = [
+  { label: '공지', query: '공지' },
+  { label: '점검', query: '점검' },
+  { label: '상점', query: '상점' },
+  { label: '이벤트', query: '이벤트' },
+]
+
+export default function Tab({ type }: Props) {
+  const url = '/news/notice'
+  const defaultType = type || '공지'
 
   return (
     <div>
-      &nbsp; {/* note: (나중에 제거)구분을 위한 임시용 */}
-      <div>공지사항</div>
-      &nbsp;
-      <div>
-        <Link href={`${url}공지`}>공지</Link>
-        <Link href={`${url}점검`}>점검</Link>
-        <Link href={`${url}상점`}>상점</Link>
-        <Link href={`${url}이벤트`}>이벤트</Link>
+      <h2>공지사항</h2>
+      <div className={styles.tab}>
+        {tabs.map((tab) => (
+          <Link
+            href={{ pathname: `${url}`, query: { type: tab.query } }}
+            className={clsx(defaultType === tab.query && styles.active)}
+          >
+            {tab.label}
+          </Link>
+        ))}
       </div>
-      &nbsp;
     </div>
   )
 }

@@ -2,6 +2,9 @@ import { NoticeList } from '@/model/news/notices'
 import getNoticeList from '../_actions/getNoticeList'
 import Tab from './_component/Tab'
 
+import clsx from 'clsx'
+import styles from './page.module.scss'
+
 /**
  * @description
  * 공지사항 테스트 페이지 (임시))
@@ -20,8 +23,8 @@ export default async function page({ searchParams }: Props) {
   const noticeList: NoticeList = await getNoticeList(type)
 
   return (
-    <section>
-      <Tab />
+    <section className={clsx([styles.page])}>
+      <Tab type={type} />
       {noticeList && noticeList.map((notice) => <div>{notice.Title}</div>)}
     </section>
   )
