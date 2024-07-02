@@ -13,14 +13,18 @@ export default async function List({ type }: Props) {
 
   return (
     <section>
-      {noticeList &&
-        noticeList.map((item, index) => (
-          <Link href={item.Link} className={styles.list} key={index}>
-            <div>{item.Type}</div>
-            <div>{item.Title}</div>
-            <div>{dayjs(item.Date).format('YYYY.MM.DD')}</div>
-          </Link>
-        ))}
+      <ul>
+        {noticeList &&
+          noticeList.map((item, index) => (
+            <li key={index} className={styles.list}>
+              <Link href={item.Link}>
+                <div>{item.Type}</div>
+                <div>{item.Title}</div>
+                <div>{dayjs(item.Date).format('YYYY.MM.DD')}</div>
+              </Link>
+            </li>
+          ))}
+      </ul>
     </section>
   )
 }
