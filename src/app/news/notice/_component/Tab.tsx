@@ -7,10 +7,10 @@ interface Props {
 }
 
 const tabs = [
-  { label: '공지', query: '공지' },
-  { label: '점검', query: '점검' },
-  { label: '상점', query: '상점' },
-  { label: '이벤트', query: '이벤트' },
+  { id: 'notice', label: '공지', query: '공지' },
+  { id: 'inspection', label: '점검', query: '점검' },
+  { id: 'shop', label: '상점', query: '상점' },
+  { id: 'event', label: '이벤트', query: '이벤트' },
 ]
 
 export default function Tab({ type }: Props) {
@@ -23,6 +23,7 @@ export default function Tab({ type }: Props) {
       <div className={styles.tab}>
         {tabs.map((tab) => (
           <Link
+            key={tab.id}
             href={{ pathname: `${url}`, query: { type: tab.query } }}
             className={clsx(defaultType === tab.query && styles.active)}
           >
