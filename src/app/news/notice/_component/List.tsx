@@ -2,6 +2,7 @@ import getNoticeList from '@/data-access/news/getNoticeList'
 import { NoticeList } from '@/model/news/notices'
 import Link from 'next/link'
 import styles from './List.module.scss'
+import dayjs from 'dayjs'
 
 interface Props {
   type: string
@@ -17,7 +18,7 @@ export default async function List({ type }: Props) {
           <Link href={item.Link} className={styles.list} key={index}>
             <div>{item.Type}</div>
             <div>{item.Title}</div>
-            <div>{item.Date}</div>
+            <div>{dayjs(item.Date).format('YYYY.MM.DD')}</div>
           </Link>
         ))}
     </section>
