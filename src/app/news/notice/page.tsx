@@ -6,7 +6,7 @@ import { Suspense } from 'react'
 
 /**
  * @description
- * 공지사항 테스트 페이지 (임시))
+ * 공지사항 페이지
  */
 
 interface Props {
@@ -17,10 +17,6 @@ interface Props {
 
 export default function page({ searchParams }: Props) {
   const { type } = searchParams
-  /**
-   * 서스펜스로 변경
-   *
-   */
 
   return (
     <section className={clsx([styles.page])}>
