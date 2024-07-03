@@ -1,13 +1,12 @@
-import { NoticeList } from '@/model/news/notices'
-import getNoticeList from '../_actions/getNoticeList'
 import Tab from './_component/Tab'
-
 import clsx from 'clsx'
 import styles from './page.module.scss'
+import List from './_component/List'
+import { Suspense } from 'react'
 
 /**
  * @description
- * 공지사항 테스트 페이지 (임시))
+ * 공지사항 페이지
  */
 
 interface Props {
@@ -16,16 +15,15 @@ interface Props {
   }
 }
 
-export default async function page({ searchParams }: Props) {
+export default function page({ searchParams }: Props) {
   const { type } = searchParams
-  console.log('type', type)
-
-  const noticeList: NoticeList = await getNoticeList(type)
 
   return (
     <section className={clsx([styles.page])}>
       <Tab type={type} />
-      {noticeList && noticeList.map((notice) => <div>{notice.Title}</div>)}
+      <Suspense fallback={<div>Loading...</div>}>
+        <List type={type} />
+      </Suspense>
     </section>
   )
 }

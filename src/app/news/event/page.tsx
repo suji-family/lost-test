@@ -10,7 +10,8 @@ export default async function page() {
 
   return (
     <section>
-      {eventList && eventList.map((event) => <div>{event.Title}</div>)}
+      {eventList &&
+        eventList.map((event, index) => <div key={index}>{event.Title}</div>)}
     </section>
   )
 }

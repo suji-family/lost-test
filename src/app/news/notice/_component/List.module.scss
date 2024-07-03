@@ -1,0 +1,25 @@
+.list {
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid color.$grey-400;
+
+  &:hover {
+    background-color: color.$grey-200;
+  }
+
+  a {
+    display: flex;
+
+    div {
+      padding: 10px;
+
+      &:nth-child(2) {
+        flex: 1;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
