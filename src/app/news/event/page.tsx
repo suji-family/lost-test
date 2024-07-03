@@ -1,5 +1,7 @@
 import { EventList } from '@/model/news/events'
 import getEventList from '../_actions/getEventList'
+import Link from 'next/link'
+import dayjs from 'dayjs'
 
 /**
  * @description
@@ -11,7 +13,22 @@ export default async function page() {
   return (
     <section>
       {eventList &&
-        eventList.map((event, index) => <div key={index}>{event.Title}</div>)}
+        eventList.map((event, index) => (
+          <Link key={index} href={event.Link}>
+            <div>
+              <img src={event.Thumbnail} alt={event.Title} />
+              <h3>{event.Title}</h3>
+              <p>
+                이벤트 기간: {dayjs(event.StartDate).format('YYYY.MM.DD HH:mm')}{' '}
+                - {dayjs(event.EndDate).format('MM.DD HH:mm')}
+              </p>
+              <p>
+                보상 수령 기간:{' '}
+                {dayjs(event.RewardDate).format('YYYY.MM.DD HH:mm')}
+              </p>
+            </div>
+          </Link>
+        ))}
     </section>
   )
 }
