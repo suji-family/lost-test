@@ -15,15 +15,17 @@ export default function Navigator() {
 
   return (
     <nav className={styles.navigator}>
-      <Logo />
+      <div className={styles.navWrapper}>
+        <Logo />
 
-      <ul className={styles.navList}>
-        {navigatorList.map(({ text, url }) => (
-          <li className={styles.navItem}>
-            <NavigatorItem text={text} url={url} />
-          </li>
-        ))}
-      </ul>
+        <ul className={styles.navList}>
+          {navigatorList.map(({ text, url }) => (
+            <li className={styles.navItem}>
+              <NavigatorItem text={text} url={url} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   )
 }
