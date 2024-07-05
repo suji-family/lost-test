@@ -1,4 +1,4 @@
-// Event 정의
+// notice 정의
 export interface Notice {
   Title: string
   Date: string
@@ -6,5 +6,5 @@ export interface Notice {
   Type: '공지' | '점검' | '상점' | '이벤트'
 }
 
-// 이벤트 리스트
+// 공지사항 리스트
 export type NoticeList = Notice[]
