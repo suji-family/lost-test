@@ -1,13 +1,17 @@
+import getCharacterList from '@/app/profile/_actions/getCharacterList'
 import { CharacterList } from '@/model/armories/characters'
-import getCharacterList from '../_actions/getCharacterList'
 
 /**
  * @description
- * 캐릭터 테스트 페이지 (임시))
+ * 검색된 캐릭터 정보 보여주는 컴포넌트
  */
-export default async function page() {
-  const characterList: CharacterList = await getCharacterList()
-  console.log('characterList', characterList)
+
+interface Props {
+  characterName: string
+}
+
+export default async function CharacterDetail({ characterName }: Props) {
+  const characterList: CharacterList = await getCharacterList(characterName)
   const { ArmoryProfile } = characterList
 
   return (
