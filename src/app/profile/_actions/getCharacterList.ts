@@ -1,9 +1,11 @@
 import getCharacterListServer from '@/data-access/armories/getCharacterList'
 import { CharacterList } from '@/model/armories/characters'
 
-export default async function getCharacterList(): Promise<CharacterList> {
+export default async function getCharacterList(
+  characterName: string,
+): Promise<CharacterList> {
   try {
-    const data = await getCharacterListServer()
+    const data = await getCharacterListServer(characterName)
 
     return data
   } catch (e) {

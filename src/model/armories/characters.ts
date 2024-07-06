@@ -13,7 +13,7 @@ export interface Tendency {
 }
 
 //  Character 정의
-export interface Character {
+export interface ArmoryProfile {
   CharacterImage: string
   ExpeditionLevel: number
   PvpGradeName: string
@@ -35,4 +35,4 @@ export interface Character {
 }
 
 // 캐릭터 리스트
-export type CharacterList = Character[]
+export type CharacterList = { ArmoryProfile: ArmoryProfile }

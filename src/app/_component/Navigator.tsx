@@ -8,7 +8,7 @@ export default function Navigator() {
     { text: '새소식', url: '/news' },
     {
       text: '게임정보',
-      url: '/profile/character',
+      url: '/profile',
     } /* note: 나중에 바꿀 것, 현재 테스트용 */,
     { text: '가이드', url: '/guide' },
   ]

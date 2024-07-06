@@ -1,11 +1,14 @@
 /**
  * @description
- * 캐릭터 테스트 페이지 (임시))
+ * 캐릭터 정보 입력 페이지
  */
+
+import SearchForm from '@/app/profile/_component/SearchForm'
+
 export default function page() {
   return (
-    <section>
-      <h1>캐릭터 페이지 테스트</h1>
-    </section>
+    <div>
+      <SearchForm />
+    </div>
   )
 }
