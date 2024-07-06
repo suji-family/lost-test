@@ -7,7 +7,6 @@ import { NoticeList } from '@/model/news/notices'
  */
 export default async function getNoticeList(type: string) {
   const apiClient = await getApiClient()
-  console.log('apiClient', apiClient)
 
   return apiClient.get<NoticeList>(`news/notices`, { type: type || '공지' })
 }

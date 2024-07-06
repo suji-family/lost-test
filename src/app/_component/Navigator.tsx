@@ -10,20 +10,22 @@ export default function Navigator() {
       text: '게임정보',
       url: '/profile/character',
     } /* note: 나중에 바꿀 것, 현재 테스트용 */,
-    { text: '가이드', url: '/' },
+    { text: '가이드', url: '/guide' },
   ]
 
   return (
     <nav className={styles.navigator}>
-      <Logo />
+      <div className={styles.navWrapper}>
+        <Logo />
 
-      <ul className={styles.navList}>
-        {navigatorList.map(({ text, url }) => (
-          <li className={styles.navItem}>
-            <NavigatorItem text={text} url={url} />
-          </li>
-        ))}
-      </ul>
+        <ul className={styles.navList}>
+          {navigatorList.map(({ text, url }) => (
+            <li key={`nav-${url}`} className={styles.navItem}>
+              <NavigatorItem text={text} url={url} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   )
 }

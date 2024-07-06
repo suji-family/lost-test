@@ -8,6 +8,14 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn-lostark.game.onstove.com',
+      },
+    ],
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles/')],
     prependData: `@use "@/styles/_color.module.scss" as color; @use "@/styles/_variables.module.scss" as variables; @use "@/styles/_mixins.module.scss" as mixins;`,

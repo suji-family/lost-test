@@ -14,12 +14,16 @@
   background-color: color.$black;
 }
 
-.navList {
-  max-width: variables.$contents-max-width;
+.navWrapper {
   display: flex;
+  align-items: center;
+  max-width: variables.$contents-max-width;
 
   width: 100%;
   height: 100%;
+}
 
+.navList {
+  display: flex;
   align-items: center;
 }
