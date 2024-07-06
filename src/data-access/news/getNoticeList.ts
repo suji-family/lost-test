@@ -3,7 +3,7 @@ import { NoticeList } from '@/model/news/notices'
 
 /**
  * @description
- * 이벤트 리스트 받아오는 api
+ * 공지사항 리스트 받아오는 api
  */
 export default async function getNoticeList(type: string) {
   const apiClient = await getApiClient()
