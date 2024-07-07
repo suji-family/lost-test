@@ -12,11 +12,21 @@ interface Props {
 
 export default async function CharacterDetail({ characterName }: Props) {
   const characterList: CharacterList = await getCharacterList(characterName)
+
+  if (!characterList) {
+    return (
+      <section>
+        <h1>캐릭터 정보 페이지</h1>
+        <p>{decodeURIComponent(characterName)} 캐릭터 정보가 없습니다.</p>
+      </section>
+    )
+  }
+
   const { ArmoryProfile } = characterList
 
   return (
     <section>
-      <h1>캐릭터 페이지 테스트</h1>
+      <h1>캐릭터 정보 페이지</h1>
       <div>
         <img src={ArmoryProfile.CharacterImage} alt="Character Image" />
         <p>Character Name: {ArmoryProfile.CharacterName}</p>
