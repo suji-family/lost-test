@@ -7,7 +7,7 @@
 
 import { useState, ChangeEvent, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
-import Input from './Input'
+import SearchInput from './Input'
 
 export default function SearchForm() {
   const [characterName, setCharacterName] = useState<string>('')
@@ -29,7 +29,7 @@ export default function SearchForm() {
     <section>
       <h1>캐릭터 페이지 테스트</h1>
       <form onSubmit={onSubmit}>
-        <Input
+        <SearchInput
           type={'text'}
           placeholder={'캐릭터명을 입력해주세요.'}
           value={characterName}
