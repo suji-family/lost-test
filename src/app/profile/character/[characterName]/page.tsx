@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import CharacterDetail from './_component/CharacterDetail'
 
 /**
@@ -16,7 +17,9 @@ export default function page({ params }: Props) {
 
   return (
     <section>
-      <CharacterDetail characterName={characterName} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <CharacterDetail characterName={characterName} />
+      </Suspense>
     </section>
   )
 }
