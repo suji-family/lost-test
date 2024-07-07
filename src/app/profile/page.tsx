@@ -6,9 +6,5 @@
 import SearchForm from '@/app/profile/_component/SearchForm'
 
 export default function page() {
-  return (
-    <div>
-      <SearchForm />
-    </div>
-  )
+  return <SearchForm />
 }
