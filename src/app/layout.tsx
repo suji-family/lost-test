@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Navigator from './_component/Navigator'
-import SideBar from './_component/SideBar'
+// import SideBar from './_component/SideBar'
 import UserDeviceCheckProvider from './_component/UserDeviceCheckProvider'
 import styles from './layout.module.scss'
 import './reset.scss'
@@ -15,8 +15,11 @@ const Pretendard = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'lost-test',
-  description: '아직 테스트중입니다',
+  title: {
+    template: '로스트아크 - %s',
+    default: '로스트아크',
+  },
+  description: '시즌3 많은 기대',
 }
 
 export default function RootLayout({
@@ -39,7 +42,7 @@ export default function RootLayout({
           <Navigator />
 
           <article className={styles.contents}>
-            <SideBar />
+            {/* <SideBar /> */}
             <main>{children}</main>
           </article>
         </UserDeviceCheckProvider>
