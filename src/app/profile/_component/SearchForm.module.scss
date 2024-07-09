@@ -1,0 +1,46 @@
+.searchContiner {
+  margin-top: 155px;
+  text-align: center;
+
+  h1 {
+    color: color.$indigo-700;
+    font-size: 2.3rem;
+  }
+}
+
+.searchGuide {
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 250%;
+}
+
+.formStyle {
+  text-align: center;
+  position: relative;
+  margin-top: 30px;
+
+  input {
+    padding-left: 20px;
+    width: 560px;
+    height: 64px;
+    background-color: color.$blue-grey-800;
+    border: 2px solid color.$blue-grey-900;
+    font-size: 20px;
+    color: color.$white;
+
+    &::placeholder {
+      color: color.$white;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 8px;
+
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    margin-left: -60px;
+  }
+}
