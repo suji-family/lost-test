@@ -5,7 +5,6 @@ import styles from './EventList.module.scss'
 
 export default async function EventList() {
   const eventList = await getEventList()
-  console.log(eventList)
 
   return (
     <section className={styles.eventList}>
