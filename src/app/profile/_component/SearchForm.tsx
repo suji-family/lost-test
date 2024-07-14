@@ -5,10 +5,11 @@
 
 'use client'
 
-import { useState, ChangeEvent, FormEvent } from 'react'
+import { useState, ChangeEvent, FormEvent, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Input from '@/ui/Input/Input'
 import styles from './SearchForm.module.scss'
+import { _getLocalStorage, _setLocalStorage } from '@/lib/Util/localStorageUtil'
 
 export default function SearchForm() {
   const [characterName, setCharacterName] = useState<string>('')
@@ -18,6 +19,21 @@ export default function SearchForm() {
     e.preventDefault()
 
     if (characterName) {
+      const recentSearch = _getLocalStorage('characterName') || []
+
+      // 중복 검색 제거, 최신 검색어를 제일 앞에 추가
+      let updatedSearch = [
+        characterName,
+        ...recentSearch.filter(
+          (character: string) => character !== characterName,
+        ),
+      ]
+
+      // 최근 검색어 갯수 제한
+      updatedSearch = updatedSearch.slice(0, 4)
+
+      _setLocalStorage('characterName', updatedSearch)
+
       router.push(`/profile/character/${characterName}`)
     }
   }
@@ -27,10 +43,7 @@ export default function SearchForm() {
   }
 
   return (
-    <section className={styles.searchContiner}>
-      <h1>전투 정보실</h1>
-      <p className={styles.searchGuide}>캐릭터명을 입력 후 검색해주세요.</p>
-      <p>장비 / 아바타 능력치 및 전투스킬을 확인 할 수 있습니다.</p>
+    <section>
       <form onSubmit={onSubmit} className={styles.formStyle}>
         <Input
           type={'text'}
