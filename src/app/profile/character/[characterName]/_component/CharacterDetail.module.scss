@@ -17,10 +17,9 @@
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+  gap: 10px;
 
   .levelInfo {
-    margin-bottom: 10px;
-
     .levelInfoExpedition,
     .levelInfoItem {
       display: flex;
@@ -29,8 +28,6 @@
   }
 
   .levelInfo2 {
-    margin-bottom: 10px;
-
     .levelInfoItemAvg,
     .levelInfoItemMax {
       display: flex;
@@ -39,8 +36,6 @@
   }
 
   .gameInfo {
-    margin-bottom: 10px;
-
     .gameInfoTitle,
     .gameInfoGuild,
     .levelInfoPvp,

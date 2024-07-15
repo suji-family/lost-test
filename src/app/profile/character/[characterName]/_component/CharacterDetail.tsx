@@ -1,6 +1,7 @@
 import getCharacterList from '@/app/profile/_actions/getCharacterList'
 import { CharacterList } from '@/model/armories/characters'
 import styles from './CharacterDetail.module.scss'
+import CharaterLevel from './CharaterLevel'
 
 /**
  * @description
@@ -24,6 +25,7 @@ export default async function CharacterDetail({ characterName }: Props) {
   }
 
   const { ArmoryProfile } = characterList
+  const { ExpeditionLevel, CharacterLevel } = ArmoryProfile
 
   return (
     <section>
@@ -37,22 +39,10 @@ export default async function CharacterDetail({ characterName }: Props) {
       <div className={styles.CharacterInfoContainer}>
         <div className={styles.profileInfo}>
           {/* 원정대, 전투 레벨 */}
-          <div className={styles.levelInfo}>
-            <div className={styles.levelInfoExpedition}>
-              <span>원정대 레벨</span>
-              <span>
-                <small>Lv.</small>
-                {ArmoryProfile.ExpeditionLevel}
-              </span>
-            </div>
-            <div className={styles.levelInfoItem}>
-              <span>전투 레벨</span>
-              <span>
-                <small>Lv.</small>
-                {ArmoryProfile.CharacterLevel}
-              </span>
-            </div>
-          </div>
+          <CharaterLevel
+            ExpeditionLevel={ExpeditionLevel}
+            CharacterLevel={CharacterLevel}
+          />
 
           {/* 장착 아이템, 달성 아이템 레벨 */}
           <div className={styles.levelInfo2}>
