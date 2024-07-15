@@ -1,3 +1,19 @@
 .RecentSearchContainer {
-  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  h4 {
+    border-bottom: 1px solid color.$grey-400;
+  }
+}
+
+.RecentSearchList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  li {
+    margin-top: 6px;
+  }
 }
