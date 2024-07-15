@@ -1,11 +1,10 @@
 /**
  * @description
- * 이벤트 테스트 페이지 (임시))
+ * 공지사항 페이지와 동일
  */
+
+import { redirect } from 'next/navigation'
+
 export default function page() {
-  return (
-    <section>
-      <h1>페이지</h1>
-    </section>
-  )
+  redirect('/news/notice')
 }

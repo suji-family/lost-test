@@ -1,15 +1,24 @@
 import Link from 'next/link'
+import { NavMainItem } from '../_models/navigator'
+import NavigatorDepthItem from './NavigatorDepthItem'
 import styles from './NavigatorItem.module.scss'
 
-interface Props {
-  text?: string
-  url?: string
-}
-
-export default function NavigatorItem({ text, url = '/' }: Props) {
+export default function NavigatorItem({
+  text,
+  url = '/',
+  depthList,
+}: NavMainItem) {
   return (
-    <Link href={url} className={styles.navItem}>
-      {text}
-    </Link>
+    <section className={styles.navItem}>
+      <Link href={url} className={styles.navTitle}>
+        {text}
+      </Link>
+
+      <ul className={styles.navDepth}>
+        {depthList.map(({ url, text }) => (
+          <NavigatorDepthItem url={url} text={text} />
+        ))}
+      </ul>
+    </section>
   )
 }

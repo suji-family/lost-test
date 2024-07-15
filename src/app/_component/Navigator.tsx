@@ -1,16 +1,22 @@
 import Logo from './Logo'
 import styles from './Navigator.module.scss'
-import NavigatorItem from './NavigatorItem'
+import NavigatorList from './NavigatorList'
 
 export default function Navigator() {
-  // TODO: 메뉴 선정해서 채워넣기
   const navigatorList = [
-    { text: '새소식', url: '/news' },
+    {
+      text: '새소식',
+      url: '/news/notice',
+      depthList: [
+        { text: '공지사항', url: '/news/notice' },
+        { text: '이벤트', url: '/news/event' },
+      ],
+    },
     {
       text: '게임정보',
       url: '/profile/character',
-    } /* note: 나중에 바꿀 것, 현재 테스트용 */,
-    { text: '가이드', url: '/guide' },
+      depthList: [{ text: '전투정보실', url: '/profile/character' }],
+    },
   ]
 
   return (
@@ -18,13 +24,7 @@ export default function Navigator() {
       <div className={styles.navWrapper}>
         <Logo />
 
-        <ul className={styles.navList}>
-          {navigatorList.map(({ text, url }) => (
-            <li key={`nav-${url}`} className={styles.navItem}>
-              <NavigatorItem text={text} url={url} />
-            </li>
-          ))}
-        </ul>
+        <NavigatorList navigatorList={navigatorList} />
       </div>
     </nav>
   )
