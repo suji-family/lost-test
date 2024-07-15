@@ -21,16 +21,13 @@ export default function SearchForm() {
     if (characterName) {
       const recentSearch = _getLocalStorage('characterName') || []
 
-      // 중복 검색 제거, 최신 검색어를 제일 앞에 추가
-      let updatedSearch = [
+      // 중복 검색 제거, 최신 검색어를 제일 앞에 추가, 최근 검색어 갯수 제한
+      const updatedSearch = [
         characterName,
         ...recentSearch.filter(
           (character: string) => character !== characterName,
         ),
-      ]
-
-      // 최근 검색어 갯수 제한
-      updatedSearch = updatedSearch.slice(0, 4)
+      ].slice(0, 4)
 
       _setLocalStorage('characterName', updatedSearch)
 
