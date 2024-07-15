@@ -1,5 +1,6 @@
 import getCharacterList from '@/app/profile/_actions/getCharacterList'
 import { CharacterList } from '@/model/armories/characters'
+import styles from './CharacterDetail.module.scss'
 
 /**
  * @description
@@ -26,19 +27,80 @@ export default async function CharacterDetail({ characterName }: Props) {
 
   return (
     <section>
-      <h1>캐릭터 정보 페이지</h1>
-      <div>
-        <img src={ArmoryProfile.CharacterImage} alt="Character Image" />
-        <p>Character Name: {ArmoryProfile.CharacterName}</p>
-        <p>Server Name: {ArmoryProfile.ServerName}</p>
-        <p>Character Level: {ArmoryProfile.CharacterLevel}</p>
-        <p>Character Class: {ArmoryProfile.CharacterClassName}</p>
-        <p>Pvp Grade: {ArmoryProfile.PvpGradeName}</p>
-        <p>Town Name: {ArmoryProfile.TownName}</p>
-        <p>Guild Name: {ArmoryProfile.GuildName}</p>
-        <p>Expedition Level: {ArmoryProfile.ExpeditionLevel}</p>
-        <p>Item Avg Level: {ArmoryProfile.ItemAvgLevel}</p>
-        <p>Item Max Level: {ArmoryProfile.ItemMaxLevel}</p>
+      {/* 캐릭터명, 서버명, 클래스명 */}
+      <div className={styles.characterHeader}>
+        <span>{ArmoryProfile.CharacterName}</span> &nbsp;
+        <span>{ArmoryProfile.ServerName}</span> &nbsp;
+        <span>{ArmoryProfile.CharacterClassName}</span>
+      </div>
+
+      <div className={styles.CharacterInfoContainer}>
+        <div className={styles.profileInfo}>
+          {/* 원정대, 전투 레벨 */}
+          <div className={styles.levelInfo}>
+            <div className={styles.levelInfoExpedition}>
+              <span>원정대 레벨</span>
+              <span>
+                <small>Lv.</small>
+                {ArmoryProfile.ExpeditionLevel}
+              </span>
+            </div>
+            <div className={styles.levelInfoItem}>
+              <span>전투 레벨</span>
+              <span>
+                <small>Lv.</small>
+                {ArmoryProfile.CharacterLevel}
+              </span>
+            </div>
+          </div>
+
+          {/* 장착 아이템, 달성 아이템 레벨 */}
+          <div className={styles.levelInfo2}>
+            <div className={styles.levelInfoItemAvg}>
+              <span>장착 아이템 레벨</span>
+              <span>
+                <small>Lv.</small>
+                {ArmoryProfile.ItemAvgLevel}
+              </span>
+            </div>
+            <div className={styles.levelInfoItemMax}>
+              <span>달성 아이템 레벨</span>
+              <span>
+                <small>Lv.</small>
+                {ArmoryProfile.ItemMaxLevel}
+              </span>
+            </div>
+          </div>
+
+          {/* 칭호, 길드, PVP, 영지 */}
+          <div className={styles.gameInfo}>
+            <div className={styles.gameInfoTitle}>
+              <span>칭호</span>
+              <span>{ArmoryProfile.Title}</span>
+            </div>
+            <div className={styles.gameInfoGuild}>
+              <span>길드</span>
+              <span>{ArmoryProfile.GuildName}</span>
+            </div>
+            <div className={styles.levelInfoPvp}>
+              <span>PVP</span>
+              <span>{ArmoryProfile.PvpGradeName}</span>
+            </div>
+            <div className={styles.gameInfoTown}>
+              <span>영지</span>
+              <span>
+                <small>Lv.</small>
+                {ArmoryProfile.TownLevel}
+              </span>
+              <span>{ArmoryProfile.TownName}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 캐릭터 이미지 */}
+        <div>
+          <img src={ArmoryProfile.CharacterImage} alt="CharacterImage" />
+        </div>
       </div>
     </section>
   )
