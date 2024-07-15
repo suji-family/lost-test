@@ -10,7 +10,6 @@ export default function RecentSearch() {
   // .filter((character: string) => character !== characterName)
   useEffect(() => {
     const localStorageData = _getLocalStorage('characterName')
-    console.log('localStorageData', localStorageData)
 
     if (localStorageData) {
       setRecentSearch(localStorageData)
@@ -18,10 +17,10 @@ export default function RecentSearch() {
   }, [])
 
   return (
-    <section className={styles.RecentSearchContainer}>
+    <div className={styles.RecentSearchContainer}>
       <h4>최근 검색</h4>
       {recentSearch && recentSearch.length > 0 && (
-        <ul>
+        <ul className={styles.RecentSearchList}>
           {recentSearch.map((character: string, i: number) => (
             <li key={`recentSearch-${i}`}>
               <Link href={`/profile/character/${character}`}>{character}</Link>
@@ -29,6 +28,6 @@ export default function RecentSearch() {
           ))}
         </ul>
       )}
-    </section>
+    </div>
   )
 }
