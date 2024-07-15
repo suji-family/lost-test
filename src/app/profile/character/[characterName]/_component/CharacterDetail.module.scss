@@ -4,7 +4,7 @@
 
   span {
     display: block;
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 }
 
@@ -17,36 +17,5 @@
   display: flex;
   flex-direction: column;
   margin-right: 20px;
-
-  .levelInfo {
-    margin-bottom: 10px;
-
-    .levelInfoExpedition,
-    .levelInfoItem {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  .levelInfo2 {
-    margin-bottom: 10px;
-
-    .levelInfoItemAvg,
-    .levelInfoItemMax {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  .gameInfo {
-    margin-bottom: 10px;
-
-    .gameInfoTitle,
-    .gameInfoGuild,
-    .levelInfoPvp,
-    .gameInfoTown {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
+  gap: 10px;
 }
