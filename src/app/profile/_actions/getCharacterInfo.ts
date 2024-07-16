@@ -1,13 +1,13 @@
 import getCharacterInfoServer from '@/data-access/armories/getCharacterInfo'
-import { CharacterInfo } from '@/model/armories/characters'
+import { ArmoryProfile } from '@/model/armories/characters'
 
 export default async function getCharacterInfo(
   characterName: string,
-): Promise<CharacterInfo> {
+): Promise<ArmoryProfile> {
   try {
-    const data = await getCharacterInfoServer(characterName)
+    const { ArmoryProfile } = await getCharacterInfoServer(characterName)
 
-    return data
+    return ArmoryProfile
   } catch (e) {
     throw new Error('에러 처리 부탁드립니다.')
   }
