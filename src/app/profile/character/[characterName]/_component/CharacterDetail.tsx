@@ -17,9 +17,9 @@ interface Props {
 }
 
 export default async function CharacterDetail({ characterName }: Props) {
-  const characterList = await getCharacterInfo(characterName)
+  const ArmoryProfile = await getCharacterInfo(characterName)
 
-  if (!characterList) {
+  if (!ArmoryProfile) {
     return (
       <section>
         <h1>캐릭터 정보 페이지</h1>
@@ -28,7 +28,6 @@ export default async function CharacterDetail({ characterName }: Props) {
     )
   }
 
-  const ArmoryProfile = characterList?.ArmoryProfile
   const {
     CharacterName,
     ServerName,
