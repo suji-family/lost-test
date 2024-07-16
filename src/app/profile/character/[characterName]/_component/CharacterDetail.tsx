@@ -4,6 +4,7 @@ import styles from './CharacterDetail.module.scss'
 import CharacterDetailLevel from './CharacterDetailLevel'
 import CharacterDetailItemLevel from './CharacterDetailItemLevel'
 import CharacterDetailGameInfo from './CharacterDetailGameInfo'
+import Image from 'next/image'
 
 /**
  * @description
@@ -79,9 +80,12 @@ export default async function CharacterDetail({ characterName }: Props) {
         </div>
 
         {/* 캐릭터 이미지 */}
-        <div>
-          <img src={CharacterImage} alt="CharacterImage" />
-        </div>
+        <Image
+          src={CharacterImage}
+          width={612}
+          height={708}
+          alt="CharacterImage"
+        />
       </div>
     </section>
   )
