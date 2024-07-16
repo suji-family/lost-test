@@ -12,8 +12,8 @@ export interface Tendency {
   MaxPoint: number
 }
 
-//  ArmoryProfile 정의
-export interface ArmoryProfile {
+//  Character 정의
+export interface Character {
   CharacterImage: string
   ExpeditionLevel: number
   PvpGradeName: string
@@ -34,5 +34,5 @@ export interface ArmoryProfile {
   ItemMaxLevel: string
 }
 
-// 캐릭터 정보
-export type CharacterInfo = { ArmoryProfile: ArmoryProfile }
+// 캐릭터 리스트
+export type CharacterList = Character[]
