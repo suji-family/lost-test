@@ -16,10 +16,10 @@ export default function RecentSearch() {
   }, [])
 
   return (
-    <div className={styles.RecentSearchContainer}>
+    <div className={styles.recentSearchContainer}>
       <h4>최근 검색</h4>
       {recentSearch && recentSearch.length > 0 && (
-        <ul className={styles.RecentSearchList}>
+        <ul className={styles.recentSearchList}>
           {recentSearch.map((character: string, i: number) => (
             <li key={`recentSearch-${i}`}>
               <Link href={`/profile/character/${character}`}>{character}</Link>

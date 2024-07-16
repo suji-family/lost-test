@@ -1,5 +1,4 @@
-import getCharacterList from '@/app/profile/_actions/getCharacterList'
-import { CharacterList } from '@/model/armories/characters'
+import getCharacterInfo from '@/app/profile/_actions/getCharacterInfo'
 import styles from './CharacterDetail.module.scss'
 import CharacterDetailLevel from './CharacterDetailLevel'
 import CharacterDetailItemLevel from './CharacterDetailItemLevel'
@@ -18,7 +17,7 @@ interface Props {
 }
 
 export default async function CharacterDetail({ characterName }: Props) {
-  const characterList: CharacterList = await getCharacterList(characterName)
+  const characterList = await getCharacterInfo(characterName)
 
   if (!characterList) {
     return (
@@ -29,7 +28,7 @@ export default async function CharacterDetail({ characterName }: Props) {
     )
   }
 
-  const { ArmoryProfile } = characterList
+  const ArmoryProfile = characterList?.ArmoryProfile
   const {
     CharacterName,
     ServerName,
@@ -55,7 +54,7 @@ export default async function CharacterDetail({ characterName }: Props) {
         <span>{CharacterClassName}</span>
       </div>
 
-      <div className={styles.CharacterInfoContainer}>
+      <div className={styles.characterInfoContainer}>
         <div className={styles.profileInfo}>
           {/* 원정대, 전투 레벨 */}
           <CharacterDetailLevel

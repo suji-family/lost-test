@@ -14,25 +14,27 @@ export interface Tendency {
 
 //  Character 정의
 export interface ArmoryProfile {
-  CharacterImage: string
-  ExpeditionLevel: number
-  PvpGradeName: string
-  TownLevel: number | null
-  TownName: string
-  Title: string
-  GuildMemberGrade: string
-  GuildName: string
-  UsingSkillPoint: number
-  TotalSkillPoint: number
-  Stats: Stat[]
-  Tendencies: Tendency[]
-  ServerName: string
-  CharacterName: string
-  CharacterLevel: number
-  CharacterClassName: string
-  ItemAvgLevel: string
-  ItemMaxLevel: string
+  ArmoryProfile: {
+    CharacterImage: string
+    ExpeditionLevel: number
+    PvpGradeName: string
+    TownLevel: number | null
+    TownName: string
+    Title: string
+    GuildMemberGrade: string
+    GuildName: string
+    UsingSkillPoint: number
+    TotalSkillPoint: number
+    Stats: Stat[]
+    Tendencies: Tendency[]
+    ServerName: string
+    CharacterName: string
+    CharacterLevel: number
+    CharacterClassName: string
+    ItemAvgLevel: string
+    ItemMaxLevel: string
+  }
 }
 
 // 캐릭터 리스트
-export type CharacterList = { ArmoryProfile: ArmoryProfile }
+export type CharacterInfo = ArmoryProfile
