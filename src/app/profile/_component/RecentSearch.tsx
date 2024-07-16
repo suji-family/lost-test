@@ -7,7 +7,6 @@ import Link from 'next/link'
 
 export default function RecentSearch() {
   const [recentSearch, setRecentSearch] = useState<string[]>([])
-  // .filter((character: string) => character !== characterName)
   useEffect(() => {
     const localStorageData = _getLocalStorage('characterName')
 
