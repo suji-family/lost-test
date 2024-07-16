@@ -84,6 +84,7 @@ export default async function CharacterDetail({ characterName }: Props) {
           width={612}
           height={708}
           alt="CharacterImage"
+          priority={true}
         />
       </div>
     </section>
