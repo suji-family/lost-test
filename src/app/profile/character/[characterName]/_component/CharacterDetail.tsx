@@ -4,6 +4,7 @@ import CharacterDetailLevel from './CharacterDetailLevel'
 import CharacterDetailItemLevel from './CharacterDetailItemLevel'
 import CharacterDetailGameInfo from './CharacterDetailGameInfo'
 import Image from 'next/image'
+import Link from 'next/link'
 
 /**
  * @description
@@ -52,6 +53,10 @@ export default async function CharacterDetail({ characterName }: Props) {
         <span>{ServerName}</span> &nbsp;
         <span>{CharacterClassName}</span>
       </div>
+
+      <Link href={`/profile/character/${CharacterName}/card`}>
+        === 캐릭터 카드 보기 ===
+      </Link>
 
       <div className={styles.characterInfoContainer}>
         <div className={styles.profileInfo}>
