@@ -14,8 +14,8 @@ export default function Navigator() {
     },
     {
       text: '게임정보',
-      url: '/profile/character',
-      depthList: [{ text: '전투정보실', url: '/profile/character' }],
+      url: '/profile',
+      depthList: [{ text: '전투정보실', url: '/profile' }],
     },
   ]
 

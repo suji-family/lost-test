@@ -1,11 +1,18 @@
 /**
  * @description
- * 캐릭터 테스트 페이지 (임시))
+ * 캐릭터 정보 입력 페이지
  */
+
+import SearchGuide from './_component/SearchGuide'
+import SearchForm from '@/app/profile/_component/SearchForm'
+import RecentSearch from './_component/RecentSearch'
+
 export default function page() {
   return (
-    <section>
-      <h1>캐릭터 페이지 테스트</h1>
-    </section>
+    <>
+      <SearchGuide />
+      <SearchForm />
+      <RecentSearch />
+    </>
   )
 }
