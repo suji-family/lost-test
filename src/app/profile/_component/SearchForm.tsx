@@ -19,19 +19,6 @@ export default function SearchForm() {
     e.preventDefault()
 
     if (characterName) {
-      const recentSearch = _getLocalStorage('characterName') || []
-
-      // 중복 검색 제거, 최신 검색어를 제일 앞에 추가, 최근 검색어 갯수 제한
-      const updatedSearch = [characterName]
-        .concat(
-          recentSearch.filter(
-            (character: string) => character !== characterName,
-          ),
-        )
-        .slice(0, 4)
-
-      _setLocalStorage('characterName', updatedSearch)
-
       router.push(`/profile/character/${characterName}`)
     }
   }
