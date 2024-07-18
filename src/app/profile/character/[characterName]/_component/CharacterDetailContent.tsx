@@ -5,6 +5,7 @@ import CharacterDetailGameInfo from './CharacterDetailGameInfo'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArmoryProfile } from '@/model/armories/characters'
+import CharacterDetailHeader from './CharacterDetailHeader'
 
 /**
  * @description
@@ -48,11 +49,11 @@ export default function CharacterDetailContent({
   return (
     <section>
       {/* 캐릭터명, 서버명, 클래스명 */}
-      <div className={styles.characterHeader}>
-        <span>{CharacterName}</span> &nbsp;
-        <span>{ServerName}</span> &nbsp;
-        <span>{CharacterClassName}</span>
-      </div>
+      <CharacterDetailHeader
+        CharacterName={CharacterName}
+        ServerName={ServerName}
+        CharacterClassName={CharacterClassName}
+      />
 
       <Link href={`/profile/character/${CharacterName}/card`}>
         === 캐릭터 카드 보기 ===
