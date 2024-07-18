@@ -1,8 +1,18 @@
-export default function page() {
+import CharacterCardModal from '../_component/CharacterCardModal'
+
+interface Props {
+  params: {
+    characterName: string
+  }
+}
+
+export default function page({ params }: Props) {
+  const { characterName } = params
+
   return (
     <section>
       <p>새로고침했을 때 url</p>
-      캐릭터 정보 카드 페이지 테스트
+      <CharacterCardModal characterName={characterName} />
     </section>
   )
 }
