@@ -1,6 +1,6 @@
 import Thumbnail from '@/ui/Thumbnail/Thumbnail'
 import dayjs from 'dayjs'
-import { EventItem } from '../_models/event'
+import type { EventItem } from '../_models/event'
 import styles from './EventItem.module.scss'
 import fallbackImg from './fallbackImg.png'
 
