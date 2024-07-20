@@ -3,8 +3,8 @@ import clsx from 'clsx'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import 'react-loading-skeleton/dist/skeleton.css'
+import BottomNavigator from './_component/BottomNavigator'
 import Navigator from './_component/Navigator'
-// import SideBar from './_component/SideBar'
 import UserDeviceCheckProvider from './_component/UserDeviceCheckProvider'
 import styles from './layout.module.scss'
 import './reset.scss'
@@ -39,10 +39,9 @@ export default function RootLayout({
         ])}
       >
         <UserDeviceCheckProvider isMobile={isMobile}>
-          <Navigator />
+          {isMobile ? <BottomNavigator /> : <Navigator />}
 
           <article className={styles.contents}>
-            {/* <SideBar /> */}
             <main>{children}</main>
           </article>
         </UserDeviceCheckProvider>

@@ -1,0 +1,9 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  height: variables.$mobile-navigator-height;
+  width: 100vw;
+  background-color: color.$grey-900;
+
+  z-index: variables.$z-index-navigator;
+}

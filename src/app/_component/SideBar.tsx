@@ -1,9 +1,10 @@
 /**
- * @description 페이지에서 공통으로 사용되는 사이드바 컴포넌트
- * TODO: 레이아웃 나누는거 결정하기
+ * @description
+ * 모바일 버전 사이드에서 나오는 사이드바
  */
 
 import Link from 'next/link'
+import Logo from './Logo'
 import styles from './SideBar.module.scss'
 
 export default function SideBar() {
@@ -15,6 +16,7 @@ export default function SideBar() {
 
   return (
     <nav className={styles.nav}>
+      <Logo />
       <ul>
         {categories.map((category) => (
           <li key={category.id}>
