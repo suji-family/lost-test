@@ -1,3 +1,19 @@
+.characterDetailContainer {
+  padding-top: 10px;
+  background-color: color.$blue-grey-900;
+  color: color.$white;
+  padding-left: 20px;
+}
+
+.characterModalButton {
+  // border: 3px solid color.$red;
+  background-color: color.$grey;
+  width: 115px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
 .characterInfoContainer {
   display: flex;
   align-items: flex-start;
@@ -8,4 +24,11 @@
   flex-direction: column;
   margin-right: 20px;
   gap: 10px;
+
+  & > section {
+    min-width: 220px;
+    border-radius: 4px;
+    background-color: color.$blue-grey-800;
+    padding: 8px;
+  }
 }
