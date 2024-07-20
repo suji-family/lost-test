@@ -4,3 +4,5 @@ import { Event } from '@/model/news/events'
 export type Banner = {
   [K in keyof Partial<Event> as Uncapitalize<K>]: Partial<Event>[K]
 }
+
+export type BannerList = Banner[]
