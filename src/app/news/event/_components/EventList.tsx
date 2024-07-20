@@ -11,7 +11,7 @@ export default async function EventList() {
       {eventList &&
         eventList.map(
           ({ thumbnail, title, startDate, endDate, rewardDate, link }, i) => (
-            <Link className={styles.eventItem} key={`event-${i}`} href={link}>
+            <Link key={`event-${i}`} href={link}>
               <EventItem
                 thumbnail={thumbnail}
                 title={title}
