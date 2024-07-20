@@ -44,7 +44,9 @@ export default function EventItem({
       </figure>
 
       <section className={styles.eventDetail}>
-        <h3>{title}</h3>
+        <h5 className={clsx([styles.title, isMobile && styles.mobile])}>
+          {title}
+        </h5>
 
         <p>
           <span className={styles.eventDate}>이벤트 기간</span>
@@ -59,12 +61,12 @@ export default function EventItem({
           </p>
         )}
 
-        <div className={styles.eventDiff}>
+        <div className={clsx([styles.eventDiff, isMobile && styles.mobile])}>
           <p className={isOverDDay ? styles.over : styles.ongoing}>
             {isOverDDay ? '종료' : '진행중'}
           </p>
 
-          {!isOverDDay && (
+          {!isOverDDay && !isMobile && (
             <div className={styles.day}>{`D-${diffDay + 1}`}</div>
           )}
         </div>
