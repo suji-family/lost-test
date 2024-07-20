@@ -1,0 +1,11 @@
+.logo {
+  position: relative;
+  display: flex;
+  width: variables.$navigator-height;
+  height: variables.$navigator-height;
+}
+
+.mobile {
+  width: variables.$mobile-navigator-height;
+  height: variables.$mobile-navigator-height;
+}
