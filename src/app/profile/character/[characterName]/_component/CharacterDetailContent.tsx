@@ -97,13 +97,14 @@ export default function CharacterDetailContent({
         </div>
 
         {/* 캐릭터 이미지 */}
-        <Image
-          src={CharacterImage}
-          width={612}
-          height={708}
-          alt="CharacterImage"
-          priority={true}
-        />
+        <div className={styles.characterImage}>
+          <Image
+            src={CharacterImage}
+            alt="CharacterImage"
+            priority={true}
+            fill
+          />
+        </div>
       </div>
     </section>
   )

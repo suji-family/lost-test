@@ -1,13 +1,12 @@
 .characterDetailContainer {
-  padding-top: 10px;
-  background-color: color.$blue-grey-900;
+  padding: 10px 0;
+  background-color: color.$blue-grey-800;
   color: color.$white;
   padding-left: 20px;
 }
 
 .characterModalButton {
-  // border: 3px solid color.$red;
-  background-color: color.$grey;
+  background-color: color.$grey-700;
   width: 115px;
   margin-bottom: 10px;
   border-radius: 4px;
@@ -28,7 +27,13 @@
   & > section {
     min-width: 220px;
     border-radius: 4px;
-    background-color: color.$blue-grey-800;
+    background-color: color.$blue-grey-900;
     padding: 8px;
   }
+}
+
+.characterImage {
+  position: relative;
+  width: 500px;
+  height: 590px;
 }
