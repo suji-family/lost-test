@@ -20,7 +20,7 @@ export default function EventItem({
 
   const start = dayjs(startDate)
   const end = dayjs(endDate)
-  const reward = dayjs(rewardDate)
+  const reward = rewardDate ? dayjs(rewardDate) : null
 
   const diffDay = end.diff(today, 'day')
 
@@ -41,10 +41,12 @@ export default function EventItem({
           <span>{end.format('MM.DD HH:mm')}</span>
         </p>
 
-        <p>
-          <span className={styles.rewardDate}>보상 수령 기간</span>
-          <span> : {reward.format('YYYY.MM.DD HH:mm')}</span>
-        </p>
+        {reward && (
+          <p>
+            <span className={styles.rewardDate}>보상 수령 기간</span>
+            <span> : {reward.format('YYYY.MM.DD HH:mm')}</span>
+          </p>
+        )}
 
         <div className={styles.eventDiff}>
           <p className={isOverDDay ? styles.over : styles.ongoing}>
