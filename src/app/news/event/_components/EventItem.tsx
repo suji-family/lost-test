@@ -1,4 +1,6 @@
+import getIsMobile from '@/lib/getIsMobile'
 import Thumbnail from '@/ui/Thumbnail/Thumbnail'
+import clsx from 'clsx'
 import dayjs from 'dayjs'
 import type { EventItem } from '../_models/event'
 import styles from './EventItem.module.scss'
@@ -16,6 +18,8 @@ export default function EventItem({
   endDate,
   rewardDate,
 }: Props) {
+  const isMobile = getIsMobile()
+
   const today = new Date()
 
   const start = dayjs(startDate)
@@ -27,9 +31,16 @@ export default function EventItem({
   const isOverDDay = diffDay < 0
 
   return (
-    <section className={styles.eventCard}>
-      <figure className={styles.thumbnail}>
-        <Thumbnail src={thumbnail} fallback={fallbackImg} alt={title} fill />
+    <section className={clsx([styles.eventCard, isMobile && styles.mobile])}>
+      <figure className={clsx([styles.thumbnail, isMobile && styles.mobile])}>
+        <Thumbnail
+          src={thumbnail}
+          fallback={fallbackImg}
+          alt={title}
+          style={{ width: '100%', height: 'auto' }}
+          width={620}
+          height={295}
+        />
       </figure>
 
       <section className={styles.eventDetail}>

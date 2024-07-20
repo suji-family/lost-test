@@ -1,9 +1,12 @@
 .mobile {
   font-size: 13px;
+  padding: 0 16px;
+  margin-bottom: variables.$mobile-navigator-height;
 }
 
 .desktop {
   font-size: 16px;
+  margin-top: variables.$navigator-height;
 }
 
 .body {
@@ -25,9 +28,8 @@
   align-items: center;
 
   .contents {
-    max-width: variables.$contents-max-width;
-    margin-top: variables.$navigator-height;
     width: 100%;
+    max-width: variables.$contents-max-width;
 
     // display: grid;
     // grid-template-columns: 200px 1fr;
