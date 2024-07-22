@@ -32,8 +32,6 @@ export default function CharacterDetailContent({
     )
   }
 
-  console.log(ArmoryProfile)
-
   const {
     CharacterName,
     ServerName,
@@ -51,7 +49,6 @@ export default function CharacterDetailContent({
     Stats,
     Tendencies,
   } = ArmoryProfile
-  console.log('Stats', Stats)
 
   return (
     <section className={styles.characterDetailContainer}>
