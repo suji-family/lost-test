@@ -1,6 +1,7 @@
 'use client'
 
 import { Tooltip } from 'react-tooltip'
+import styles from './CharacterTooltip.module.scss'
 
 interface Props {
   tooltip: string[]
@@ -8,8 +9,6 @@ interface Props {
 }
 
 export default function CharacterTooltip({ tooltip, tooltipId }: Props) {
-  console.log('tooltip', tooltip)
-
   // HTML 태그를 제거하고 텍스트만 추출
   const plainTextTooltips = tooltip
     .map((htmlString) => htmlString.replace(/<[^>]*>/g, ''))
@@ -28,7 +27,7 @@ export default function CharacterTooltip({ tooltip, tooltipId }: Props) {
         html={`<ul>
                         ${plainTextTooltips.map((item) => `<li>${item}</li>`).join('')}
                     </ul>`}
-        style={{ zIndex: 9999 }}
+        className={styles.tooltip}
       />
     </>
   )
