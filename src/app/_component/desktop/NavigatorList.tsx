@@ -1,4 +1,4 @@
-import { NavList } from '../_models/navigator'
+import { NavList } from '@/app/_models/navigator'
 import NavigatorItem from './NavigatorItem'
 import styles from './NavigatorList.module.scss'
 

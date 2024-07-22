@@ -16,7 +16,7 @@ export default function NavigatorItem({
 
       <ul className={styles.navDepth}>
         {depthList.map(({ url, text }) => (
-          <NavigatorDepthItem url={url} text={text} />
+          <NavigatorDepthItem url={url} text={text} key={`nav-depth-${url}`} />
         ))}
       </ul>
     </section>

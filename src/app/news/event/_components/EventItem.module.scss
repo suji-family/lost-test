@@ -1,5 +1,6 @@
 .eventCard {
   display: flex;
+  height: 420px;
   flex-direction: column;
 
   transition: border-color 0.2s;
@@ -7,14 +8,25 @@
   border-color: color.$grey-300;
   border-style: solid;
 
+  &.mobile {
+    height: 100%;
+  }
+
   &:hover {
     border-color: color.$grey-600;
   }
 
+  .title {
+    @include mixins.headline;
+
+    &.mobile {
+      @include mixins.body;
+      font-weight: 700;
+    }
+  }
+
   .thumbnail {
     position: relative;
-    width: 620px;
-    height: 295px;
 
     &::after {
       content: '';
@@ -64,6 +76,11 @@
       text-align: center;
       font-size: 18px;
       font-weight: 700;
+
+      &.mobile {
+        top: 18px;
+        right: 16px;
+      }
 
       .over {
         color: color.$grey-900;

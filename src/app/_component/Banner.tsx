@@ -4,12 +4,12 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Banner } from '../_models/banner'
+import { BannerList } from '../_models/banner'
 import styles from './Banner.module.scss'
 import BannerSlide from './BannerSlide'
 
 interface Props {
-  eventList: Banner[]
+  eventList: BannerList
 }
 
 export default function Banner({ eventList }: Props) {

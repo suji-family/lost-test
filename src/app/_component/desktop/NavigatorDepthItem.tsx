@@ -1,5 +1,5 @@
+import { NavDepthItem } from '@/app/_models/navigator'
 import Link from 'next/link'
-import { NavDepthItem } from '../_models/navigator'
 import styles from './NavigatorDepthItem.module.scss'
 
 type Props = NavDepthItem
