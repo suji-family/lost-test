@@ -27,6 +27,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
     "react-loading-skeleton": "^3.4.0",
+    "react-tooltip": "^5.27.1",
     "stylelint-config-prettier": "^9.0.5",
     "swiper": "^11.1.4"
   },

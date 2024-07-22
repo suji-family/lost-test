@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArmoryProfile } from '@/model/armories/characters'
 import CharacterDetailHeader from './CharacterDetailHeader'
+import CharacterDetailStat from './CharacterDetailStat'
+import CharacterDetailTendency from './CharacterDetailTendency'
 
 /**
  * @description
@@ -30,6 +32,8 @@ export default function CharacterDetailContent({
     )
   }
 
+  console.log(ArmoryProfile)
+
   const {
     CharacterName,
     ServerName,
@@ -44,10 +48,13 @@ export default function CharacterDetailContent({
     TownLevel,
     TownName,
     CharacterImage,
+    Stats,
+    Tendencies,
   } = ArmoryProfile
+  console.log('Stats', Stats)
 
   return (
-    <section>
+    <section className={styles.characterDetailContainer}>
       {/* 캐릭터명, 서버명, 클래스명 */}
       <CharacterDetailHeader
         CharacterName={CharacterName}
@@ -56,7 +63,7 @@ export default function CharacterDetailContent({
       />
 
       <Link href={`/profile/character/${CharacterName}/card`}>
-        === 캐릭터 카드 보기 ===
+        <div className={styles.characterModalButton}>캐릭터 카드 보기</div>
       </Link>
 
       <div className={styles.characterInfoContainer}>
@@ -81,16 +88,23 @@ export default function CharacterDetailContent({
             TownLevel={TownLevel}
             TownName={TownName}
           />
+
+          {/* 전투 특성 */}
+          <CharacterDetailStat Stats={Stats} />
+
+          {/* 성향 */}
+          <CharacterDetailTendency Tendencies={Tendencies} />
         </div>
 
         {/* 캐릭터 이미지 */}
-        <Image
-          src={CharacterImage}
-          width={612}
-          height={708}
-          alt="CharacterImage"
-          priority={true}
-        />
+        <div className={styles.characterImage}>
+          <Image
+            src={CharacterImage}
+            alt="CharacterImage"
+            priority={true}
+            fill
+          />
+        </div>
       </div>
     </section>
   )

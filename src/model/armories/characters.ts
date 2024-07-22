@@ -1,12 +1,12 @@
-// Stat 정의
-export interface Stat {
+// Stats 정의
+export interface Stats {
   Type: string
   Value: string
   Tooltip: string[]
 }
 
-// Tendency 정의
-export interface Tendency {
+// Tendencies 정의
+export interface Tendencies {
   Type: string
   Point: number
   MaxPoint: number
@@ -24,8 +24,8 @@ export interface ArmoryProfile {
   GuildName: string
   UsingSkillPoint: number
   TotalSkillPoint: number
-  Stats: Stat[]
-  Tendencies: Tendency[]
+  Stats: Stats[]
+  Tendencies: Tendencies[]
   ServerName: string
   CharacterName: string
   CharacterLevel: number
