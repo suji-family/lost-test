@@ -10,16 +10,26 @@ export default function CharacterDetailStat({ Stats }: Props) {
   return (
     <section className={styles.stat}>
       {Stats.map((stat, index) => (
-        <div data-tooltip-id={`tooltip-${index}`} key={`stat-${index}`}>
+        <div
+          key={`stat-${index}`}
+          data-tooltip-id="tooltip"
+          data-tooltip-content={stat.Tooltip.map((tooltip) =>
+            tooltip.replace(/<[^>]*>/g, ''),
+          )
+            .filter(
+              (text) =>
+                !text.includes(
+                  '카드 도감 누적 효과가 반영된 값으로 전투정보실에서는 별도 수치를 표기하지 않습니다.',
+                ),
+            )
+            .join('\n')}
+        >
           <span>{stat.Type}</span>
           <span>{stat.Value}</span>
-          {/* 툴팁 메시지 */}
-          <CharacterTooltip
-            tooltip={stat.Tooltip}
-            tooltipId={`tooltip-${index}`}
-          />
         </div>
       ))}
+      {/* 특성 툴팁 */}
+      <CharacterTooltip tooltipId="tooltip" />
     </section>
   )
 }
