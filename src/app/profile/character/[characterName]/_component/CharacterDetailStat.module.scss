@@ -1,8 +1,10 @@
 .stat {
-  min-width: 220px;
+  min-width: 234px;
   border-radius: 4px;
   background-color: color.$blue-grey-900;
   padding: 8px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
   & > div {
     display: flex;

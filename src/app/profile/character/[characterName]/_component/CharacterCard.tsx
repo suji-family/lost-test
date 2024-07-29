@@ -78,9 +78,6 @@ export default function CharacterCard({ ArmoryProfile }: Props) {
               TownLevel={TownLevel}
               TownName={TownName}
             />
-
-            {/* 전투 특성 */}
-            <CharacterDetailStat Stats={Stats} />
           </div>
 
           <div className={styles.characterImage}>
@@ -92,6 +89,9 @@ export default function CharacterCard({ ArmoryProfile }: Props) {
             />
           </div>
         </div>
+
+        {/* 전투 특성 */}
+        <CharacterDetailStat Stats={Stats} />
       </div>
     </div>
   )
