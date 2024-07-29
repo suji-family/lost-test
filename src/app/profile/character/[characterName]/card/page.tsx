@@ -11,7 +11,6 @@ export default function page({ params }: Props) {
 
   return (
     <section>
-      <p>새로고침했을 때 url</p>
       <CharacterCardModal characterName={characterName} />
     </section>
   )

@@ -24,7 +24,7 @@ export default function CharacterDetailStat({ Stats }: Props) {
             )
             .join('\n')}
         >
-          <span>{stat.Type}</span>
+          <span>{stat.Type}</span> &nbsp;
           <span>{stat.Value}</span>
         </div>
       ))}

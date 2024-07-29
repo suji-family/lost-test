@@ -8,6 +8,7 @@ import styles from './CharacterCard.module.scss'
 import CharacterDetailHeader from './CharacterDetailHeader'
 import { ArmoryProfile } from '@/model/armories/characters'
 import { useRouter } from 'next/navigation'
+import CharacterDetailStat from './CharacterDetailStat'
 
 interface Props {
   ArmoryProfile: ArmoryProfile
@@ -28,6 +29,7 @@ export default function CharacterCard({ ArmoryProfile }: Props) {
     TownLevel,
     TownName,
     CharacterImage,
+    Stats,
   } = ArmoryProfile
 
   const router = useRouter()
@@ -55,14 +57,6 @@ export default function CharacterCard({ ArmoryProfile }: Props) {
         </button>
 
         <div className={styles.characterInfoContainer}>
-          <Image
-            src={CharacterImage}
-            width={200}
-            height={220}
-            alt="CharacterImage"
-            priority={true}
-          />
-
           <div className={styles.profileInfo}>
             {/* 원정대, 전투 레벨 */}
             <CharacterDetailLevel
@@ -85,7 +79,19 @@ export default function CharacterCard({ ArmoryProfile }: Props) {
               TownName={TownName}
             />
           </div>
+
+          <div className={styles.characterImage}>
+            <Image
+              src={CharacterImage}
+              alt="CharacterImage"
+              priority={true}
+              fill
+            />
+          </div>
         </div>
+
+        {/* 전투 특성 */}
+        <CharacterDetailStat Stats={Stats} />
       </div>
     </div>
   )
