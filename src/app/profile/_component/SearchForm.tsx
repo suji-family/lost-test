@@ -1,3 +1,8 @@
+/**
+ * @description
+ * 캐릭터 정보 입력 폼
+ */
+
 'use client'
 
 import { useState, ChangeEvent, FormEvent } from 'react'

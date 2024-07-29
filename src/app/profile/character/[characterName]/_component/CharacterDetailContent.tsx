@@ -53,7 +53,7 @@ export default function CharacterDetailContent({
 
   return (
     <section className={styles.characterDetailContainer}>
-      <div className={styles.headerContainer}>
+      <div className={styles.characterDetailHeaderContainer}>
         {/* 캐릭터명, 서버명, 클래스명 */}
         <CharacterDetailHeader
           CharacterName={CharacterName}
