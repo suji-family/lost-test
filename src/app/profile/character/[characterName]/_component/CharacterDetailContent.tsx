@@ -8,6 +8,7 @@ import { ArmoryProfile } from '@/model/armories/characters'
 import CharacterDetailHeader from './CharacterDetailHeader'
 import CharacterDetailStat from './CharacterDetailStat'
 import CharacterDetailTendency from './CharacterDetailTendency'
+import SearchForm from '@/app/profile/_component/SearchForm'
 
 /**
  * @description
@@ -52,16 +53,22 @@ export default function CharacterDetailContent({
 
   return (
     <section className={styles.characterDetailContainer}>
-      {/* 캐릭터명, 서버명, 클래스명 */}
-      <CharacterDetailHeader
-        CharacterName={CharacterName}
-        ServerName={ServerName}
-        CharacterClassName={CharacterClassName}
-      />
+      <div className={styles.headerContainer}>
+        {/* 캐릭터명, 서버명, 클래스명 */}
+        <CharacterDetailHeader
+          CharacterName={CharacterName}
+          ServerName={ServerName}
+          CharacterClassName={CharacterClassName}
+        />
 
-      <Link href={`/profile/character/${CharacterName}/card`}>
-        <div className={styles.characterModalButton}>캐릭터 카드 보기</div>
-      </Link>
+        {/* 캐릭터 카드 보기 버튼 */}
+        <Link href={`/profile/character/${CharacterName}/card`}>
+          <div className={styles.characterModalButton}>캐릭터 카드 보기</div>
+        </Link>
+
+        {/* 캐릭터 검색 폼 */}
+        <SearchForm className={styles.searchFormForDetail} />
+      </div>
 
       <div className={styles.characterInfoContainer}>
         <div className={styles.profileInfo}>

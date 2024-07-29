@@ -1,17 +1,16 @@
-/**
- * @description
- * 캐릭터 정보 입력 폼
- */
-
 'use client'
 
-import { useState, ChangeEvent, FormEvent, useEffect } from 'react'
+import { useState, ChangeEvent, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import Input from '@/ui/Input/Input'
 import styles from './SearchForm.module.scss'
-import { _getLocalStorage, _setLocalStorage } from '@/lib/Util/localStorageUtil'
+import clsx from 'clsx'
 
-export default function SearchForm() {
+interface Props {
+  className?: string
+}
+
+export default function SearchForm({ className }: Props) {
   const [characterName, setCharacterName] = useState<string>('')
   const router = useRouter()
 
@@ -29,7 +28,7 @@ export default function SearchForm() {
 
   return (
     <section>
-      <form onSubmit={onSubmit} className={styles.formStyle}>
+      <form onSubmit={onSubmit} className={clsx(styles.formStyle, className)}>
         <Input
           type={'text'}
           placeholder={'캐릭터명을 입력해주세요.'}
@@ -37,9 +36,8 @@ export default function SearchForm() {
           onChange={onChange}
           maxLength={12}
         />
-        <button type="submit">검색</button> {/* TODO: 검색아이콘으로 바꾸기 */}
+        <button type="submit">검색</button>
       </form>
-      {/* TODO: 최근 검색 결과 넣기 */}
     </section>
   )
 }

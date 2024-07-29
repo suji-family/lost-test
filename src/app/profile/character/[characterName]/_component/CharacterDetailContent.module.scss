@@ -1,21 +1,38 @@
 .characterDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px 0;
   background-color: color.$blue-grey-800;
   color: color.$white;
   padding-left: 20px;
 }
 
+.headerContainer {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
 .characterModalButton {
   background-color: color.$grey-700;
   width: 115px;
-  margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
+
+  &:hover {
+    background-color: color.$grey-600;
+  }
 }
 
 .characterInfoContainer {
   display: flex;
   align-items: flex-start;
+  margin-top: 10px;
 }
 
 .profileInfo {
@@ -29,4 +46,34 @@
   position: relative;
   width: 500px;
   height: 535px;
+}
+
+.searchFormForDetail {
+  display: flex;
+  justify-content: flex-end;
+
+  input {
+    width: 250px;
+    height: 40px;
+    border: 1px solid color.$blue-grey-700;
+    color: color.$white;
+    border-radius: 4px;
+    font-size: 14px;
+
+    &::placeholder {
+      color: color.$grey-500;
+    }
+  }
+
+  button {
+    padding: 8px 12px;
+    background-color: color.$grey-700;
+    color: color.$white;
+    border-radius: 4px;
+    font-size: 14px;
+
+    &:hover {
+      background-color: color.$grey-600;
+    }
+  }
 }
